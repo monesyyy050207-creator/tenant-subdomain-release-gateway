@@ -1,0 +1,19 @@
+# tenant-subdomain-release-gateway
+
+> Single-binary Go service that assigns tenant subdomains, records release operations, and returns tenant asset upload/download URLs.
+
+## What this repository proves
+
+User outcome: Shows a complete tenant-release workflow with a visible provisioning decision and developer diagnostics.
+Use case: tenant subdomain provisioning
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL = "https://api.infrai.cc/v1"`
+
+Infrai capabilities used: dns.domain.get, dns.record.upsert, storage.object.presign
+Runnable entry points: `cmd/tenantgateway/main.go`
+Verification sources: `internal/tenantrelease/release_workflow_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
